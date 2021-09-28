@@ -8,16 +8,12 @@ var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
 
-    console.log("t1")
-
-User.create({
-    username: req.body.username,
-    password: bcrypt.hashSync(req.body.password, 8)
-  });
-    
-  console.log("t2")
-res.send({ message: "User was registered successfully!" });
-console.log("t3")
+  User.create({
+      username: req.body.username,
+      password: bcrypt.hashSync(req.body.password, 8)
+    });
+  
+  res.send({ message: "User was registered successfully!" });
 
 };
 
